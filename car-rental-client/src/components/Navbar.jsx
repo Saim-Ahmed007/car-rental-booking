@@ -36,7 +36,9 @@ const Navbar = () => {
             <div className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:border-t border-[#c4c7d2] right-0 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration z-50 ${location.pathname === '/' ? 'bg-[#F1F5F9]' : 'bg-white'} ${open ? 'max-sm:translate-x-0' : 'max-sm:translate-x-full'}`}>
                 {
                     menuLinks.map((menu, index) => (
-                        <Link key={index} to={menu.path}>{menu.name}</Link>
+                        <Link
+                        onClick={()=> setOpen(!open)}
+                        key={index} to={menu.path}>{menu.name}</Link>
                     ))
                 }
                 <div className='hidden lg:flex items-center text-sm gap-2 border border-[#c4c7d2] px-3 rounded-full max-w-56'>
